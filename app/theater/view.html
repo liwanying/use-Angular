@@ -14,6 +14,14 @@
 		</div>
   </a>
 </div>
+
+<p>总共 : {{total}}条记录  {{currentPage}}/{{totalPage}}</p>
+<nav>
+  <ul class="pager">
+    <li ng-class="{disabled:currentPage<=1}"><a ng-click='go(currentPage-1)'>Previous</a></li>
+    <li ng-class="{disabled:currentPage>=totalPage}"><a ng-click="go(currentPage+1)">Next</a></li>
+  </ul>
+</nav>
 <div class="mask" ng-show="loading">
   <div class="spinner">
     <div class="dot1"></div>
