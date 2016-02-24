@@ -1,6 +1,6 @@
 <h1 class="page-header">{{title}}</h1>
 <div class="list-group">
-  <a ng-repeat="item in subjects" href="#" class="list-group-item">
+  <a ng-repeat="item in subjects" href="#/detail/{{item.id}}" class="list-group-item">
   	<span class="badge">{{item.rating.average}}</span>
     <div class="media">
 		  <div class="media-left">
@@ -8,13 +8,13 @@
 		  </div>
 		  <div class="media-body">
 		    <h4 class="media-heading">{{item.title}}</h4>
-				<p>导演 ： <span ng-repeat="d in item.directors">{{d.name}}{{$last?"、":""}}</span></p>
+				<p>导演 ： <span ng-repeat="d in item.directors">{{d.name}}{{$last?"":"、"}}</span></p>
 				<p>类型 ： <span>{{item.genres.join("、")}}</span></p>
 		  </div>
 		</div>
   </a>
 </div>
-
+<div ng-show="!loading">
 <p>总共 : {{total}}条记录  {{currentPage}}/{{totalPage}}</p>
 <nav>
   <ul class="pager">
@@ -22,6 +22,7 @@
     <li ng-class="{disabled:currentPage>=totalPage}"><a ng-click="go(currentPage+1)">Next</a></li>
   </ul>
 </nav>
+</div>
 <div class="mask" ng-show="loading">
   <div class="spinner">
     <div class="dot1"></div>

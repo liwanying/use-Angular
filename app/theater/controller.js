@@ -20,8 +20,9 @@
 			var start = (page-1)*count;
 			$scope.currentPage = page;
 			httpServer.jsonp("http://api.douban.com/v2/movie/"+$routeParams.catagory,
-				{start:start,count:count},
+				{start:start,count:count,q:$routeParams.q},
 				function(data){
+					$scope.id= data.id;
 					$scope.title = data.title;
 					$scope.total = data.total;
 					$scope.totalPage = Math.ceil($scope.total/count);

@@ -3,9 +3,8 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-  'moviesCat.commingsoon',
+  'moviesCat.detail',
   'moviesCat.theater',
-  'moviesCat.top',
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/in_theaters/1'});
@@ -22,4 +21,11 @@ config(['$routeProvider', function($routeProvider) {
        }
 		})
 
-	}]);
+	}])
+.controller("searchCtrl",['$scope','$route',function($scope,$route) {
+	$scope.input = "";
+	$scope.search = function() {
+		$route.updateParams({q:$scope.input,catagory:'search'});
+		console.log($scope.input);
+	}
+	}])

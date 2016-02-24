@@ -88,7 +88,9 @@ body {
 /*
  * Placeholder dashboard ideas
  */
-
+.pager li {
+	cursor:pointer;
+}
 .placeholders {
   margin-bottom: 30px;
   text-align: center;

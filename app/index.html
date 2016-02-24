@@ -21,14 +21,8 @@
 					<a class="navbar-brand" href="#">豆瓣电影</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Dashboard</a></li>
-						<li><a href="#">Settings</a></li>
-						<li><a href="#">Profile</a></li>
-						<li><a href="#">Help</a></li>
-					</ul>
-					<form class="navbar-form navbar-right">
-						<input type="text" class="form-control" placeholder="Search...">
+					<form class="navbar-form navbar-right" ng-controller="searchCtrl" ng-submit="search()">
+						<input type="text" class="form-control" ng-model="input" placeholder="Search...">
 					</form>
 				</div>
 			</div>
@@ -52,7 +46,6 @@
 	<script src="app.js"></script>
 	<script src="components/httpServer.js"></script>
 	<script src="theater/controller.js"></script>
-	<script src="top/controller.js"></script>
-	<script src="commingsoon/controller.js"></script>
+	<script src="detail/controller.js"></script>
 </body>
 </html>
